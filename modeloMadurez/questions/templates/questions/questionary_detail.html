@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/model-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Modelo Creado</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+       
+        {% if 'ok' in request.GET %}
+          <p style="color:green;">
+            Custionario completado correctamente. Por favor revise sus resultados.
+          </p>
+        {% endif %}
+
+        <h2 class="section-heading mb-4">{{questionary.name}}</h2>
+        <div>
+            <p><b>Horizonte de Planeación 1: </b>{{questionary.plan1}}</p>
+            <p><b>Horizonte de Planeación 2: </b>{{questionary.plan2}}</p>
+          
+            <p>
+              <a href="{% url 'questionaries:update' questionary.id %}">Cuestionario</a>
+             | <a href="{% url 'questionaries:tableresults' questionary.id questionary.name|slugify %}">Resultados</a>
+
+             </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

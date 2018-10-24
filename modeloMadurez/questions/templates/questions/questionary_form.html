@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Crear Modelo{% endblock %}
+
+{%block background %}{% static 'core/img/newmodel-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Nuevo Modelo</h1>
+<span class="subheading">crear nuevo modelo de madurez</span>
+{%endblock%}
+
+
+{% block content %}
+<!--{% include 'questions/includes/questionary_menu.html'%}-->
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Crear Modelo de Madurez" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

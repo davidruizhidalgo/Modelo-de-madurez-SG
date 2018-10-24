@@ -1,0 +1,1041 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/model-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Cuestionario</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <div>
+          {% if 'ok' in request.GET %}
+            <p style="color:green;">
+              Sección 5 guardada correctamente. 
+             <!-- <a href="#">Haz clic aquí para ver el resultado</a>.-->
+            </p>
+          {% endif %}
+          <form action="" method="post">{% csrf_token %}  
+              <div style="display: none">  {{ form.as_table}} </div>
+              <!--INICIO DE TABLA DE CUESTIONARIO-->
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg .tg-abx8{font-weight:bold;background-color:#c0c0c0;text-align:left;vertical-align:top}
+                .tg .tg-266k{background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-9u2q{background-color:#9b9b9b;border-color:inherit;text-align:center;vertical-align:top}
+                .tg .tg-6e8n{font-weight:bold;background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-pu0z{font-weight:bold;background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0lax{text-align:left;vertical-align:top}
+                .tg .tg-y6fn{background-color:#c0c0c0;text-align:left;vertical-align:top}
+                </style>
+                <table class="tg">
+                  <tr>
+                    <th class="tg-9u2q" colspan="5"><span style="font-weight:bold">SECCIÓN 6 </span><br><span style="font-weight:bold">CUSTUMER (CUST)</span></th>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 1 - INICIAL</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.1</td>
+                    <td class="tg-6e8n">Está llevando a cabo investigaciones sobre el uso de tecnología SG para mejorar la experiencia, beneficios y participación de sus usuarios?</td>
+                    <td class="tg-6e8n"> Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos. </td>
+                    <td class="tg-llyw">{{ form.cust_11_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_11_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_11_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Indirectamente (no como parte de sus iniciativas SG, pero proporcionando una perspectiva SG)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Directamente como sea necesario</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Continuamente como parte de su proceso normal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.2<br></td>
+                    <td class="tg-6e8n">Está investigando las implicaciones de privacidad y seguridad de las nuevas tecnologías y funciones de negocio que faciliten la participación del usuario en SG?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_12_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_12_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_12_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Indirectamente (no como parte de sus iniciativas SG, pero proporcionando una perspectiva SG)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Directamente como necesidad del usuario</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Continuamente como parte de su proceso normal    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.3</td>
+                    <td class="tg-6e8n">Está divulgando y explicando su visión de la red del futuro a sus clientes (ej: explicando los beneficios de SG y describiendo potenciales escenarios de casos de uso)?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_13_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_13_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_13_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">nformalmente, no existe divulgación estructurada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Indirectamente a través de medios de comunicación y otros canales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Directamente a los usuarios</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.4</td>
+                    <td class="tg-6e8n">Está consultando con comisiones de servicio públicos y/o otras organizaciones gubernamentales sobre el impacto en los clientes que tiene su estrategia SG, antes de ser aplicada?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_14_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_14_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_14_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">De forma limitada (la colaboración no es frecuente y no hace parte del proceso normal de negocio)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Ampliamente (la colaboración es frecuente y hace parte del proceso normal de negocio)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 2 - HABILITADO</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.1</td>
+                    <td class="tg-6e8n"><span style="font-weight:700">Ha realizado pruebas de AMI y/o AMR en clientes residenciales?</span><br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_21_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_21_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_21_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Existe un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Hay pruebas en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Se han finalizado las pruebas o se han implementado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.2</td>
+                    <td class="tg-6e8n">Recopila datos de consumo residencial con una frecuencia mayor a la mensual para su uso en análisis y planeación operacional?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_22_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_22_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_22_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Existe un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente instalado en algunos clientes (&lt;40%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (&gt;40%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.3</td>
+                    <td class="tg-6e8n">Está modelando la confiabilidad de los equipos de la red?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_23_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_23_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_23_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Existe un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, para al menos una clase de activos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Sí, para múltiples clases de activos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.4</td>
+                    <td class="tg-6e8n">Ha realizado pruebas piloto de tecnologías de conexión/desconexión remota para clientes residenciales?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_24_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_24_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_24_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Existe un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Hay pruebas en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Se han finalizado las pruebas o se han implementado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.5</td>
+                    <td class="tg-6e8n">Está evaluando el impacto en los clientes, de nuevos servicios y procesos de despacho tales como "Home Area Networks" (HAN), instalaciones de medidores inteligentes, precios dinámicos, y/o apagado o encendido remoto?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_25_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_25_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_25_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En proceso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Finalizado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.6</td>
+                    <td class="tg-6e8n">Qué porcentaje de pruebas piloto relacionadas con SG y Requerimientos de Licitacines y Propuestas, especifican los requerimientos de seguridad y privacidad para la protección del usuario?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_26_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_26_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_26_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 3 - INTEGRACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.1</td>
+                    <td class="tg-6e8n">Tiene clasificado a los clientes residenciales de tal forma que esté en capacidad de ofrecerles servicios ajustados a sus necesidades ("customize")?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_31_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_31_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_31_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En evaluación</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Existen categorías (categorías basadas en un criterio simple)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Altamente categorizado (categorías basadas en combinaciones de criterios)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.2</td>
+                    <td class="tg-6e8n">Qué porcentaje de los medidores de los clientes residenciales tienen capacidades de comunicación bidireccional (ej: AMI)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_32_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_32_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_32_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.3</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes residenciales tienen habilitada la capacidad de conexión y desconexión remota?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_33_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_33_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_33_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.4</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes residenciales tienen habilitado respuesta a la demanda o control de carga remoto?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_34_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_34_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_34_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.5</td>
+                    <td class="tg-6e8n">Qué porcentaje de subestaciones están equipadas con detección automáticas de apagones?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_35_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_35_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_35_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.6</td>
+                    <td class="tg-6e8n">Qué porcentaje de los clientes residenciales tienen acceso por solicitud de los datos de su consumo diario (o con mayor frecuencia)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_36_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_36_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_36_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.7</td>
+                    <td class="tg-6e8n">Ha implementado una experiencia de acceso a la información con los clientes (Ej: usabilidad y consistencia de la información, disponibilidad) a través de al menos dos canales de comunicación con clientes residenciales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_37_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_37_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_37_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En proceso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completo para al menos dos canales (ej: web, respuesta por voz, interfaz móvil)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Completo a través de múltiples canales (ej: web, respuesta por voz, interfaz móvil)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.8</td>
+                    <td class="tg-6e8n">Proporciona educación al cliente sobre cómo utilizar los servicios SG para reducir el consumo en las horas pico?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_38_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_38_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_38_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Sí, disponible a través de canales pasivos (ej: web)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Sí, activo, indirecto a través de medios de comunicación u otros canales de transmisión</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, activo, directo y dirigido a usuarios individuales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.9</td>
+                    <td class="tg-6e8n">Qué porcentaje de productos y servicios para los clientes tienen incorporados controles de seguridad y privacidad que cumplan la normatividad gubernamental e industrial?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_39_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_39_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_39_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 4- OPTIMIZACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.1</td>
+                    <td class="tg-6e8n">Proporciona respaldo a los clientes para ayudarles a analizar y comparar su consumo actual en comparación con todos los programas de precios disponibles?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_41_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_41_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_41_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No, o en desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Limitado (&lt;50% de los clientes o programas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Amplio (50% - 90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, para esencialmente todos los clientes y programas (&gt;90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.2</td>
+                    <td class="tg-6e8n">Qué porcentaje de circuitos están equipados con notificación autónoma y detección automática de cortes o apagones?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_42_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_42_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_42_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.3</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes tienen acceso por solicitud a los datos de consumo cercanos a tiempo-real (por minuto)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_43_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_43_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_43_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.4</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes participan en programas de respuesta a la demanda o control de carga remoto?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_44_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_44_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_44_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.5</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes residenciales se les proporciona la capacidad de respuesta automática a señales de cambios de precios para los principales dispositivos de consumo de energía en su residencia?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_45_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_45_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_45_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.6</td>
+                    <td class="tg-6e8n">Para qué porcentaje de clientes están disponibles los programas de facturación neta en casa (ej: crédito/pago de paneles solares, eólicos, etc.)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_46_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_46_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_46_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">E</td>
+                    <td class="tg-0lax" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>4.7</td>
+                    <td class="tg-abx8">Ha integrado una experiencia de acceso a la información con los clientes a través de todos los canales de comunicación de los clientes residenciales para todos los servicios ofrecidos (ej: impulsando fuentes de datos comunes)?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_47_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_47_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_47_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Completo para al menos dos canales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Completo a través de múltiples canales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Completo a través de todos los canales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 5 - LÍDER</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.1</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes pueden gestionar completamente sus niveles de consumo y suministro de energía (fuentes renovables de energía y mixtos)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_51_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_51_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_51_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76%- 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.2</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes (incluyendo los residenciales) tienen detección automática de apagones?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_52_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_52_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_52_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76%- 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>5.3</td>
+                    <td class="tg-abx8">Qué porcentaje de clientes están soportados mediante generación propia "plug-and-play" (incluyendo la infraestructura de respaldo necesaria para facturación neta, control, etc.)?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_53_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_53_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_53_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">E</td>
+                    <td class="tg-0lax" colspan="4">76%- 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>5.4</td>
+                    <td class="tg-abx8">Puede proveer evidencia convincente que garantice la seguridad y privacidad de los datos del cliente que son almacenados transmitidos o procesados?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_54_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_54_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_54_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">Evidencia autogenerada (ej: revisiones de diseño, revisiones de código)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Evidencia generada externamente (ej: certificaciones de terceros, revisiones de terceros)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Ambos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>5.5</td>
+                    <td class="tg-abx8">Sus esquemas de control automatizado y de optimización  de recursos consideran y respaldan la optimización  de la red regional y/o nacional?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.cust_55_act }}</td>
+                    <td class="tg-llyw">{{ form.cust_55_p1 }}</td>
+                    <td class="tg-llyw">{{ form.cust_55_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">Para la protección de la seguridad y privacidad del usuario</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Para la promoción de control y selección del usuario</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Ambos</td>
+                  </tr>
+                </table>
+              <!-- FIN DE TABLA DE CUESTIONARIO  -->
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary btn-block" value="Siguiente Sección" />
+            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

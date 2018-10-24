@@ -1,0 +1,711 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/model-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Cuestionario</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <div>
+          {% if 'ok' in request.GET %}
+            <p style="color:green;">
+              Sección 7 guardada correctamente. 
+             <!-- <a href="#">Haz clic aquí para ver el resultado</a>.-->
+            </p>
+          {% endif %}
+          <form action="" method="post">{% csrf_token %}  
+              <div style="display: none">  {{ form.as_table}} </div>
+              <!--INICIO DE TABLA DE CUESTIONARIO-->
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg .tg-abx8{font-weight:bold;background-color:#c0c0c0;text-align:left;vertical-align:top}
+                .tg .tg-mn8v{font-weight:bold;background-color:#9b9b9b;border-color:inherit;text-align:center;vertical-align:top}
+                .tg .tg-266k{background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-6e8n{font-weight:bold;background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-pu0z{font-weight:bold;background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-y6fn{background-color:#c0c0c0;text-align:left;vertical-align:top}
+                .tg .tg-0lax{text-align:left;vertical-align:top}
+                </style>
+                <table class="tg">
+                  <tr>
+                    <th class="tg-mn8v" colspan="5">SECCIÓN 8<br>SOCIETAL AND ENVIRONMENTAL (SE)</th>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 1 - INICIAL</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.1</td>
+                    <td class="tg-6e8n">Su estrategia o visión SG guía el rol de la empresa en temas ambientales o sociales?</td>
+                    <td class="tg-6e8n"> Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos. </td>
+                    <td class="tg-llyw">{{ form.se_11_act }}</td>
+                    <td class="tg-llyw">{{ form.se_11_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_11_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Rol aceptado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Rol aceptado y metas establecidas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Rol aceptado, metas establecidas y estrategia detallada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.2<br></td>
+                    <td class="tg-6e8n">Ha promovido públicamente los beneficios ambientales de su visión y estrategia SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_12_act }}</td>
+                    <td class="tg-llyw">{{ form.se_12_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_12_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Informalmente, no hay comunicación estructurada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Indirectamente a través de medios de comunicación y otros canales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Directamente con los usuarios</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Tanto directa como indirectamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.3</td>
+                    <td class="tg-6e8n">Se ha puesto a disposición de la inspección pública su registro de conformidades con las regulaciones ambientales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_13_act }}</td>
+                    <td class="tg-llyw">{{ form.se_13_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_13_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Disponible bajo solicitud específica</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Disponible bajo solicitud a través de múltiples canales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Disponible y públicas de forma activa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.4</td>
+                    <td class="tg-6e8n">Su visión y estrategia SG especifica su rol en la protección de la infraestructura crítica nacional?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_14_act }}</td>
+                    <td class="tg-llyw">{{ form.se_14_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_14_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Rol aceptado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Rol aceptado y metas establecidas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Rol aceptado, metas establecidas y estrategia detallada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 2 - HABILITADO</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.1</td>
+                    <td class="tg-6e8n"><span style="font-weight:700">Su estrategia y planes de trabajo SG abordan temas ambientales y sociales (incremento de costos, calentamiento global, polución, materiales peligrosos, control de derrames y otras inquietudes públicas)?</span><br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_21_act }}</td>
+                    <td class="tg-llyw">{{ form.se_21_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_21_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (los planes de trabajo y estrategias SG abordan unos pocos problemas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Ampliamente (abordan un amplio rango de problemas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.2</td>
+                    <td class="tg-6e8n">Ha establecido programas de eficiencia energética para los usuarios?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_22_act }}</td>
+                    <td class="tg-llyw">{{ form.se_22_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_22_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En prueba</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Para al menos una categoría o segmento de clientes</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Para todos los clientes</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.3</td>
+                    <td class="tg-6e8n">Su organización considera una visión "triple balance" al tomar decisiones (considerando mediciones de rendimiento financiero, social y ambiental)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_23_act }}</td>
+                    <td class="tg-llyw">{{ form.se_23_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_23_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Bajo consideración</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En al menos una función y/o línea de negocio</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">A través de todas las funciones y/o líneas de negocio</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.4</td>
+                    <td class="tg-6e8n">Ha implementado proyectos de prueba de conceptos ambientales (ej: generación solar o eólica) que demuestren los beneficios de SG en aspectos soliales y ambientales?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_24_act }}</td>
+                    <td class="tg-llyw">{{ form.se_24_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_24_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>2.5</td>
+                    <td class="tg-abx8">Ha puesto a disposición de los usuarios información de consumo incrementalmente granular y con mayor frecuencia?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_25_act }}</td>
+                    <td class="tg-llyw">{{ form.se_25_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_25_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">Información del consumo mensual disponible</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Más frecuente que mensual</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Diariamente o con mayor frecuencia</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 3 - INTEGRACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.1</td>
+                    <td class="tg-6e8n">Sus programas sociales y ambientales en su estrategia SG son mediblemente efectivos?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_31_act }}</td>
+                    <td class="tg-llyw">{{ form.se_31_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_31_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Sólo medición de rendimiento de manera informal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Se está implementando medición de rendimiento de manera formal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Se está implementando medición de rendimiento de manera formal alcanzando las metas propuestas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Se está implementando medición de rendimiento de manera formal excediendo las metas propuestas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.2</td>
+                    <td class="tg-6e8n">Su organización pone a disposición de los clientes (incluyendo comerciales, industriales y residenciales) información clasificada y a la medida que incluya beneficios y costos ambientales y sociales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_32_act }}</td>
+                    <td class="tg-llyw">{{ form.se_32_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_32_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;30% de todos los clientes)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (30% - 80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (&gt;80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.3</td>
+                    <td class="tg-6e8n">Su organización ha establecido programas que fomenten el consumo de los usuarios fuera de las horas pico?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_33_act }}</td>
+                    <td class="tg-llyw">{{ form.se_33_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_33_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;30% de todos los clientes)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (30% - 80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (&gt;80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.4</td>
+                    <td class="tg-6e8n">Su organización reporta de forma regular el impacto social y ambiental de sus programas y tecnologías SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_34_act }}</td>
+                    <td class="tg-llyw">{{ form.se_34_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_34_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Disponible bajo demanda específica</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Disponible a través de múltiples canales bajo demanda</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Disponible y públicas de forma activa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 4- OPTIMIZACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.1</td>
+                    <td class="tg-6e8n">Su organización colabora con las partes interesadas externas direccionados hacia problemas sociales y ambientales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_41_act }}</td>
+                    <td class="tg-llyw">{{ form.se_41_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_41_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Con las partes interesadas externas claves para problemas claves</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Con todas las partes interesadas externas para problemas claves</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Con todas las partes interesadas externas para todos los problemas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.2</td>
+                    <td class="tg-6e8n">Su organización lleva un "ranking" público en temas ambientales y sociales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_42_act }}</td>
+                    <td class="tg-llyw">{{ form.se_42_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_42_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">De forma limitada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Extensamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.3</td>
+                    <td class="tg-6e8n">Ha implementado programas SG (ej: programas de respuesta a la demanda, señales de precios dinámicos o manejo del control de dispositivos) para recortar la demanda en las horas pico?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_43_act }}</td>
+                    <td class="tg-llyw">{{ form.se_43_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_43_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">De forma limitada (ej: disponible para un conjunto limitado de clientes o con opciones limitadas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Extensamente (ej: disponible para &gt;90% de clientes con múltiples opciones)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.4</td>
+                    <td class="tg-6e8n">Para qué porcentaje de clientes (incluyendo comerciales, industriales o residenciales)a través de su red se puede gestionar activamente el consumo y los dispositivos del cliente final?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_44_act }}</td>
+                    <td class="tg-llyw">{{ form.se_44_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_44_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">E</td>
+                    <td class="tg-0lax" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>4.5</td>
+                    <td class="tg-abx8">Su organización satisface las metas de flexibilidad de su infraestructura crítica y contribuye a los de la región y la nación?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_45_act }}</td>
+                    <td class="tg-llyw">{{ form.se_45_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_45_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">Algunas metas están siendo alcanzadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Todas las metas se cumplen adecuadamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Las metas están siendo probadas y demostradas para cumplirse adecuadamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Existe evidencia convincente de cumplimiento de metas y de contribuciones a la región y la nación</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 5 - LÍDER</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.1</td>
+                    <td class="tg-6e8n">Las metas de "triple balance" de su organización están alineadas con los objetivos locales, regionales y nacionales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_51_act }}</td>
+                    <td class="tg-llyw">{{ form.se_51_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_51_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Alineamiento limitado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Alineado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Alineado y las metas se cumplen</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.2</td>
+                    <td class="tg-6e8n">Qué porcentaje de clientes tienen habilitado el control de su huella ambiental energética a través de optimización  automática de su nivel de consumo y suministro de energía completo (fuentes de energía y mixto) basado en las preferencias del usuario?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_52_act }}</td>
+                    <td class="tg-llyw">{{ form.se_52_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_52_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">0%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.3</td>
+                    <td class="tg-6e8n">Su organización es líder en el desarrollo y la promoción de mejores prácticas y/o tecnologías para la protección de la infraestructura crítica nacional?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.se_53_act }}</td>
+                    <td class="tg-llyw">{{ form.se_53_p1 }}</td>
+                    <td class="tg-llyw">{{ form.se_53_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">No, pero miembros de su organización participan en foros relevantes de la industria y/o gobierno</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Sí, miembros de su organización lideran foros relevantes de la industria y/o gobierno</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, somos pioneros y promotores de mejores prácticas, métodos y/o tecnologías para la adaptación SG</td>
+                  </tr>
+                </table>         
+              <!-- FIN DE TABLA DE CUESTIONARIO  -->
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary btn-block" value="Finalizar Cuestionario" />
+            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

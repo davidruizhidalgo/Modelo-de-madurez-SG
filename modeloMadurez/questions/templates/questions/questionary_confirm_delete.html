@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Borrar Modelo{% endblock %}
+{%block background %}{% static 'core/img/questionaries-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Borrar Modelo</h1>
+<span class="subheading">Eliminar modelos creados previemente</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+          <form action="" method="post">{% csrf_token %}
+            <p>¿Estás seguro de que quieres borrar <b>"{{ object }}"</b>?</p>
+            <input type="submit" class="btn btn-primary btn-block" value="Sí, borrar el modelo" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

@@ -1,0 +1,641 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/model-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Cuestionario</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <div>
+          {% if 'ok' in request.GET %}
+            <p style="color:green;">
+              Modelo guardado correctamente.
+            </p>
+          {% endif %}
+          <form action="" method="post">{% csrf_token %}  
+            <div style="display: none">  {{ form.as_table}} </div>
+            <!--INICIO DE TABLA DE CUESTIONARIO-->
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg .tg-266k{background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-9u2q{background-color:#9b9b9b;border-color:inherit;text-align:center;vertical-align:top}
+                .tg .tg-6e8n{font-weight:bold;background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-pu0z{font-weight:bold;background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                </style>
+                <table class="tg">
+                  <tr>
+                    <th class="tg-9u2q" colspan="5"><span style="font-weight:bold">SECCIÓN 1 </span><br><span style="font-weight:bold">STRATEGY, MANAGEMENT AND REGULATORY (SMR)</span><br></th>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 1 - INICIAL</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.1</td>
+                    <td class="tg-6e8n">Su organización ha desarrollado una visión SG que oriente su mejoramiento operativo?</td>
+                    <td class="tg-6e8n"> Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos. </td>
+                    <td class="tg-llyw">{{ form.srm_11_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_11_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_11_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Solamente en una sola función (o línea de negocio)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">A múltiples funciones (involucra y trasciende a múltiples funciones)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">A la organización en general (involucra y trasciende a todas las funciones en la organización)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.2<br></td>
+                    <td class="tg-6e8n">Dentro de su organización existen implementaciones experimentales de conceptos SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_12_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_12_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_12_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Experimentación limitada con apoyo limitado de la organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Experimentación significativa con apoyo limitado de la organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Experimentación limitada con fuerte apoyo de la organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Experimentación significativa con fuerte apoyo de la organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.3</td>
+                    <td class="tg-6e8n">La visión SG de su empresa ha sido discutida con entes reguladores?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_13_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_13_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_13_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Se han llevado a cabo discusiones informales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Se han llevado a cabo discusiones formales y de manera amplia</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 2 - HABILITADO</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.1</td>
+                    <td class="tg-6e8n">A nivel gerencial o ejecutivo ha sido aprobada una estrategia SG y un plan de negocio?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_21_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_21_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_21_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Aprobado de forma provisional</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Aprobado formalmente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.2</td>
+                    <td class="tg-6e8n">En su organización ha sido formulada y aceptada una visión común SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_22_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_22_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_22_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky">No</td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky">En una sola función y/o línea de negocio</td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky">A través de múltiples funciones y/o líneas de negocio</td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky">A través de todas las funciones y/o líneas de negocio</td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                    <td class="tg-0pky"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.3</td>
+                    <td class="tg-6e8n">Las inversiones operacionales de su organización están alineadas con la estrategia y plan de negocio SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_23_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_23_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_23_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente, alineado indirectamente (no enfocado específicamente hacía SG)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente, alineado de forma explícita (enfocado hacía SG)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Significativo, alineado de forma explicita</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.4</td>
+                    <td class="tg-6e8n">Existen presupuestos específicos para financiar la implementación de SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_24_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_24_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_24_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Muy limitado (&lt;30% de lo requerido para financiar el año actual)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Montos moderados (30% - 70%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Presupuesto adecuado (&gt;70%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.5</td>
+                    <td class="tg-6e8n">Su organización está trabajando en conjunto con las partes interesadas (incluidos los accionistas y  usuario final) y los entes reguladores en su estrategia y visión SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_25_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_25_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_25_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Sólo con las partes interesadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Sólo con los entes reguladores</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Con las partes interesadas y los entes reguladores</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.6</td>
+                    <td class="tg-llyw"><span style="font-weight:bold">Se proporciona apoyo y financiamiento para llevar a cabo proyectos de prueba de concepto SG (ej: AMI, DG)?</span></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_26_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_26_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_26_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Limitado, con apoyo y financiamiento informal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Significativo, con apoyo y financiamiento informal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Limitado, con apoyo y financiamiento formal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Significativo con apoyo y financiamiento formal</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 3 - INTEGRACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.1</td>
+                    <td class="tg-llyw"><span style="font-weight:bold">La visión, estrategia y plan de negocio SG ha sido incorporado en la visión y estrategia de su organización?</span></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_31_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_31_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_31_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Ampliamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.2</td>
+                    <td class="tg-6e8n">Ha establecido un modelo de gobierno SG para la gestión, toma de decisiones, administración de procesos y recursos SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_32_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_32_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_32_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Parcial</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Sí, un modelo propio no integrado al modelo de gobierno existente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, integrado al modelo de gobierno existente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.3</td>
+                    <td class="tg-6e8n">Tiene uno o más líderes SG con autoridad explícita a través de funciones y líneas de negocio que aseguren una implantación apropiada de una estrategia SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_33_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_33_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_33_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Múltiples líderes, pero sin alineación y límites claros</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Múltiples líderes, alineados</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Un único líder</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.4</td>
+                    <td class="tg-6e8n">Las partes interesadas (accionistas, reguladores, usuarios, etc.) han autorizado las inversiones requeridas para el mejoramiento en SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_34_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_34_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_34_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Indirectamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Explícitamente y completamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 4- OPTIMIZACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.1</td>
+                    <td class="tg-6e8n">Su visión y estrategia SG guía la estrategia y gestión de la empresa en los niveles más altos (ej: nivel gerencial)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_41_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_41_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_41_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">SG tiene un impacto limitado o indirecto</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Impacto directo y significativo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Guía la estrategia de desarrollo de la empresa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.2</td>
+                    <td class="tg-llyw"><span style="font-weight:bold">Es SG una competencia fundamental en toda su organización?</span></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_42_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_42_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_42_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En partes de la organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En toda la organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En toda la organización y orientada al futuro de la empresa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.3</td>
+                    <td class="tg-6e8n">Su estrategia SG se ha divulgado y revisado en colaboración con partes interesadas externas, excluyendo algunos aspectos estratégicos?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_43_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_43_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_43_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Con algunas partes interesadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Con las principales partes interesadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Con todas las partes interesadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 5 - LÍDER</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.1</td>
+                    <td class="tg-6e8n">Su organización capitaliza los avance en SG y los toma como base para la introducción de nuevas ofertas de productos y servicios?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_51_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_51_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_51_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Poco</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Ampliamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.2</td>
+                    <td class="tg-6e8n">Sus actividades de negocio SG proporcionan suficientes recursos económicos que permitirán el financiamiento continuo para la expansión y sostenimiento SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_52_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_52_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_52_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Sí, principalmente por medio de ahorros en costos y ganancias por eficiencia</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, principalmente por medio de nuevos productos y servicios</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Sí, principalmente por medio de una tasa de recuperación óptima</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">F</td>
+                    <td class="tg-0pky" colspan="4">Sí, principalmente por medio de combinaciones de las anteriores</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.3</td>
+                    <td class="tg-6e8n">Ha implementado nuevos modelos de negocios como resultado de los desarrollos SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.srm_53_act }}</td>
+                    <td class="tg-llyw">{{ form.srm_53_p1 }}</td>
+                    <td class="tg-llyw">{{ form.srm_53_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Identificados, pero aún no implementados</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Al menos un modelo de negocio implementado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Múltiples nuevos modelos de negocios implementados</td>
+                  </tr>
+                </table>
+            <!-- FIN DE TABLA DE CUESTIONARIO  -->
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Siguiente Sección" />
+          </div>
+         </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

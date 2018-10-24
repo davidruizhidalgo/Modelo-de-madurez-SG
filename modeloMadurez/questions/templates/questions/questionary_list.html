@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Cuestionarios{% endblock %}
+{%block background %}{% static 'core/img/questionaries-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Modelos Creados</h1>
+<span class="subheading">modelos creados previamente</span>
+{%endblock%}
+{% block content %}
+<main role="main">
+  <div class="container mb-4">
+    {% for question in questionary_list|dictsort:"id" reversed %}
+      <div class="row mt-3">
+        <div class="col-md-9 mx-auto">
+          <h2 class="mb-4">{{question.name}}</h2>
+          <div>
+            <p><b>Horizonte de Planeación 1: </b>{{question.plan1}}</p>
+            <p><b>Horizonte de Planeación 2: </b>{{question.plan2}}</p>
+            <p>
+                <a href="{% url 'questionaries:update' question.id %}">Cuestionario</a>
+                | <a href="{% url 'questionaries:tableresults'  question.id question.name|slugify %}">Resultados</a>
+                | <a href="{% url 'questionaries:delete' question.id %}">Borrar</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</main>
+<hr>
+{% endblock %}

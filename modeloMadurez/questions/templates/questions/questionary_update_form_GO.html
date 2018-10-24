@@ -1,0 +1,738 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/model-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Cuestionario</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <div>
+          {% if 'ok' in request.GET %}
+            <p style="color:green;">
+              Sección 2 guardada correctamente. 
+             <!-- <a href="#">Haz clic aquí para ver el resultado</a>.-->
+            </p>
+          {% endif %}
+          <form action="" method="post">{% csrf_token %}  
+              <div style="display: none">  {{ form.as_table}} </div>
+              <!--INICIO DE TABLA DE CUESTIONARIO-->
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg .tg-266k{background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-9u2q{background-color:#9b9b9b;border-color:inherit;text-align:center;vertical-align:top}
+                .tg .tg-6e8n{font-weight:bold;background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-pu0z{font-weight:bold;background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0lax{text-align:left;vertical-align:top}
+                </style>
+                <table class="tg">
+                  <tr>
+                    <th class="tg-9u2q" colspan="5"><span style="font-weight:bold">SECCIÓN 3</span><br><span style="font-weight:bold">GRID OPERATIONS (GO)</span></th>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 1 - INICIAL</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.1</td>
+                    <td class="tg-6e8n">Tiene un caso de negocio para nuevos equipos y sistemas relacionados con SG para al menos una función o línea de negocio (ej: AMI, desconexión remota, PMUs, etc.)?</td>
+                    <td class="tg-6e8n"> Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos. </td>
+                    <td class="tg-llyw">{{ form.go_11_act }}</td>
+                    <td class="tg-llyw">{{ form.go_11_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_11_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Aprobado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En ejecución</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.2<br></td>
+                    <td class="tg-6e8n">Está evaluando nuevos sensores, switches y tecnologías de comunicación para el monitoreo y control de la red?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_12_act }}</td>
+                    <td class="tg-llyw">{{ form.go_12_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_12_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En alguna medida, no directamente para SG</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En alguna medida, orientados para SG</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (ej: numerosas evaluaciones en marcha o finalizadas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.3</td>
+                    <td class="tg-6e8n">Se han llevado a cabo esfuerzos de concientización dentro del personal de la empresa para respaldar las actividades SG?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_13_act }}</td>
+                    <td class="tg-llyw">{{ form.go_13_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_13_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En alguna medida, no directamente para SG</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En alguna medida, orientados para SG</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (ej: numerosas evaluaciones en marcha o finalizadas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.4</td>
+                    <td class="tg-6e8n">Usted está evaluando las fallas y sistemas de gestión de distribución relacionados con automatización de subestaciones (más allá de SCADA)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_14_act }}</td>
+                    <td class="tg-llyw">{{ form.go_14_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_14_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En alguna medida, no directamente para SG</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En alguna medida, orientados para SG</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (ej: numerosas evaluaciones en marcha o finalizadas)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.5</td>
+                    <td class="tg-6e8n">Los requerimientos de seguridad (física e informática) son considerados en todas las iniciativas de la operación en la red?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_15_act }}</td>
+                    <td class="tg-llyw">{{ form.go_15_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_15_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Algo (&lt;50%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">La mayoría (50% - 90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Sí, para esencialmente todas las iniciativas (&gt;90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 2 - HABILITADO</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.1</td>
+                    <td class="tg-6e8n">Ha automatizado subestaciones de distribución e implementado enlaces de comunicación para actividades de automatización remota del sistema de distribución (ej: maniobra inteligente en campo)?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_21_act }}</td>
+                    <td class="tg-llyw">{{ form.go_21_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_21_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En progreso </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente completo (&lt;70% de las subestaciones)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Ampliamente desarrollado (&gt;=70%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.2</td>
+                    <td class="tg-6e8n">Está implementado esquemas avanzados de restauración de fallas que se resuelvan automáticamente (auto-restauración) o reduzcan la magnitud de los apagones inesperados?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_22_act }}</td>
+                    <td class="tg-llyw">{{ form.go_22_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_22_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En  un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Muchos finalizados (&gt;20% de la red)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.3</td>
+                    <td class="tg-6e8n">Aparte de SCADA, está poniendo a prueba el monitoreo remoto de los principales activos de la red que respalden la toma de decisiones manuales?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_23_act }}</td>
+                    <td class="tg-llyw">{{ form.go_23_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_23_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En proceso de prueba</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Pruebas completas o la tecnología está siendo instalada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.4</td>
+                    <td class="tg-6e8n">Está invirtiendo en redes de comunicación expandidas para respaldar las operaciones en la red?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_24_act }}</td>
+                    <td class="tg-llyw">{{ form.go_24_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_24_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos 50% En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente completo (instaladas y funcionando para &gt;20% de la red)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Disponible para la mayoría de funciones o líneas de negocio de la empresa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 3 - INTEGRACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.1</td>
+                    <td class="tg-llyw"><span style="font-weight:bold">La información obtenida de la red inteligente (SG)está disponible para el análisis del sistema o de las funciones o líneas de negocio de la empresa?</span></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_31_act }}</td>
+                    <td class="tg-llyw">{{ form.go_31_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_31_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Disponible para unas pocas funciones o líneas de negocio de la empresa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Disponible para la mayoría de funciones o líneas de negocio de la empresa</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.2</td>
+                    <td class="tg-6e8n">Ha mejorado la capacidad de toma de decisiones sobre las líneas de negocio de la empresa, gracias a la implementación de nuevas herramientas y estrategias de análisis de control (Ej. Datos, equipos, tecnologías y técnicas de análisis)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_32_act }}</td>
+                    <td class="tg-llyw">{{ form.go_32_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_32_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En líneas de negocio individuales</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En varias líneas de negocio</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En la mayoría o todas las líneas de negocio</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.3</td>
+                    <td class="tg-6e8n">Los desarrollos realizados en Redes Inteligentes (SG) han permitido que la planeación de las operaciones de la red no se hagan basado en estimaciones sino en hechos, datos e información?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_33_act }}</td>
+                    <td class="tg-llyw">{{ form.go_33_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_33_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;25% de la planeación se basa en hechos)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (25% - 75%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (75% - 90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.4</td>
+                    <td class="tg-6e8n">Los medidores inteligentes se han convertido en sensores importantes para la administración de la red?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_34_act }}</td>
+                    <td class="tg-llyw">{{ form.go_34_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_34_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Existe un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (&lt;40% de la red usa medidores como sensores para la administración de la red)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (&gt;=40%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.5</td>
+                    <td class="tg-6e8n">Los datos obtenidos gracias al conocimiento del estado y a las actividades de diagnóstico de la red, se usan para respaldar su seguridad física e informática?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_35_act }}</td>
+                    <td class="tg-llyw">{{ form.go_35_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_35_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Existe un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Se ha implantado para una o más funciones críticas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Se ha implantado para todas las funciones críticas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Implantado de forma integral a través de la red</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.6</td>
+                    <td class="tg-6e8n">Existe una toma de decisiones automatizada en los esquemas de protección, es decir, aprovechando las mayores capacidades analíticas y de comunicación de los sistemas de protección?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_36_act }}</td>
+                    <td class="tg-llyw">{{ form.go_36_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_36_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Se toman decisiones basadas en análisis que informan a operadores humanos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Al menos una decisión basada en el análisis está siendo ejecutada automáticamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Un gran número de decisiones basadas en análisis están siendo ejecutadas automáticamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 4- OPTIMIZACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.1</td>
+                    <td class="tg-6e8n">Los datos de operación obtenidos desde los desarrollos SG están siendo utilizados para optimizar procesos a través de la organización?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_41_act }}</td>
+                    <td class="tg-llyw">{{ form.go_41_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_41_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;50% de los procesos donde SG tenga impacto)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (50% - 80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.2</td>
+                    <td class="tg-6e8n">La gestión operacional de la red está basado en datos cercanos a tiempo-real (gestión dinámica de la red)?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_42_act }}</td>
+                    <td class="tg-llyw">{{ form.go_42_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_42_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;25% de decisiones operacionales utilizando datos cercanos a tiempo-real)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (25% - 75%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (75% - 90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.3</td>
+                    <td class="tg-6e8n">Sus predicciones operacionales están basadas en datos recopilados a partir de las capacidades SG?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_43_act }}</td>
+                    <td class="tg-llyw">{{ form.go_43_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_43_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;25% de predicciones operacionales se basan en datos SG)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Moderadamente (25% - 75%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (75% - 90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;90%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.4</td>
+                    <td class="tg-6e8n">La información relacionada con la operación de la red se ha puesto a disposición de la organización a través de las funciones y las líneas de negocio (existe observabilidad completa)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_44_act }}</td>
+                    <td class="tg-llyw">{{ form.go_44_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_44_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;50% de las funciones y líneas de negocio tienen acceso a datos de la red)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (50% - 80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.5</td>
+                    <td class="tg-6e8n">Existe toma de decisiones en los esquemas de protección basados en medición y supervisión de área amplia (más allá de sus límites operacionales)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_45_act }}</td>
+                    <td class="tg-llyw">{{ form.go_45_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_45_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Se toman decisiones basadas en análisis de área amplia que informan a operadores humanos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Al menos una decisión basada en análisis de área amplia está siendo ejecutada automáticamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Un gran número de decisiones basadas en análisis de área amplia están siendo ejecutadas automáticamente</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 5 - LÍDER</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.1</td>
+                    <td class="tg-6e8n">Qué porcentaje de su red emplea operaciones de auto-recuperación?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_51_act }}</td>
+                    <td class="tg-llyw">{{ form.go_51_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_51_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.2</td>
+                    <td class="tg-6e8n">En el sistema completo existe toma decisiones de forma automatizada y basada en análisis?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n"><div >{{questionary.plan1}}</div></td>
+                    <td class="tg-6e8n"><div >{{questionary.plan2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.go_52_act }}</td>
+                    <td class="tg-llyw">{{ form.go_52_p1 }}</td>
+                    <td class="tg-llyw">{{ form.go_52_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Un poco (Menos de un &lt;50% del sistema)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (50% - 80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;80%)</td>
+                  </tr>
+                </table>
+              <!-- FIN DE TABLA DE CUESTIONARIO  -->
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary btn-block" value="Siguiente Sección" />
+            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

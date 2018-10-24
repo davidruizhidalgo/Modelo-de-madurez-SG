@@ -1,0 +1,715 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/model-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Cuestionario</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col-md-9 mx-auto">
+        <div>
+          {% if 'ok' in request.GET %}
+            <p style="color:green;">
+              Sección 6 guardada correctamente. 
+             <!-- <a href="#">Haz clic aquí para ver el resultado</a>.-->
+            </p>
+          {% endif %}
+          <form action="" method="post">{% csrf_token %}  
+              <div style="display: none">  {{ form.as_table}} </div>
+              <!--INICIO DE TABLA DE CUESTIONARIO-->
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0;}
+                .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                .tg .tg-abx8{font-weight:bold;background-color:#c0c0c0;text-align:left;vertical-align:top}
+                .tg .tg-266k{background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-9u2q{background-color:#9b9b9b;border-color:inherit;text-align:center;vertical-align:top}
+                .tg .tg-6e8n{font-weight:bold;background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                .tg .tg-0lax{text-align:left;vertical-align:top}
+                .tg .tg-y6fn{background-color:#c0c0c0;text-align:left;vertical-align:top}
+                .tg .tg-pu0z{font-weight:bold;background-color:#9b9b9b;border-color:inherit;text-align:left;vertical-align:top}
+                </style>
+                <table class="tg">
+                  <tr>
+                    <th class="tg-9u2q" colspan="5"><span style="font-weight:bold">SECCIÓN 7 </span><br><span style="font-weight:bold">VALUE CHAIN INTEGRATION (VCI)</span></th>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 1 - INICIAL</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.1</td>
+                    <td class="tg-6e8n">Ha identificado los activos y programas necesarios para facilitar la gestión de carga?</td>
+                    <td class="tg-6e8n"> Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos. </td>
+                    <td class="tg-llyw">{{ form.vci_11_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_11_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_11_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Evaluación e identificación en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Identificación finalizada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br><br>1.2<br></td>
+                    <td class="tg-6e8n">Ha identificado fuentes de generación distribuida y las capacidades necesarias para soportarlas?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_12_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_12_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_12_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Evaluación e identificación en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Identificación finalizada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.3</td>
+                    <td class="tg-6e8n">Ha identificado sistemas de almacenamiento de energía y las capacidades necesarias para soportarlas?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_13_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_13_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_13_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Evaluación e identificación en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Identificación finalizada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>1.4</td>
+                    <td class="tg-6e8n">Tiene alguna estrategia para desarrollar, habilitar, y gestionar un portafolio de diferentes fuentes de energía (ej: integración de nuevos recursos como respuesta a la demanda, generación distribuida, etc.)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_14_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_14_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_14_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En proceso de crear una estrategia</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Completo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">En ejecución</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>1.5</td>
+                    <td class="tg-abx8">Ha identificado requerimientos de seguridad para facilitar la interacción con un amplio portafolio de socios de la cadena de valor?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_15_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_15_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_15_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">Evaluación e identificación en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Identificación finalizada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 2 - HABILITADO</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.1</td>
+                    <td class="tg-6e8n"><span style="font-weight:700">Está proporcionando apoyo para los sistemas de gestión de energía residenciales (ej: vía portales de usuario o "Home Display")?</span><br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_21_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_21_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_21_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Moderadamente (&lt;40% de los usuarios) 100% En gran medida (&gt;40%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (&gt;40%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.2</td>
+                    <td class="tg-6e8n">Ha redefinido la cadena de valor según las capacidades SG (incluyendo generación distribuida, microgeneración, almacenamiento de energía y nuevos usuarios y proveedores)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_22_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_22_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_22_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">En progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Finalizado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.3</td>
+                    <td class="tg-6e8n">Está realizando pruebas piloto que respalde un portafolio de diversas fuentes de energía (ej: generación distribuida, gestión de demanda, respuesta a la demanda, almacenamiento, etc.)?<br></td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_23_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_23_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_23_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Piloto en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Actividades piloto finalizadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Piloto finalizado e implantación en progreso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>2.4</td>
+                    <td class="tg-6e8n">Está realizando pruebas piloto que propendan por una interacción segura con un amplio portafolio de socios de la cadena de valor?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_24_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_24_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_24_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En un plan documentado que incluye cronogramas y presupuestos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Piloto en marcha</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Actividades piloto finalizadas</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Piloto finalizado y en desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 3 - INTEGRACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.1</td>
+                    <td class="tg-6e8n">Tiene un plan de recursos integrado que incluya nuevas tecnologías y fuentes de energía (ej: sistemas de gestión Volt/Var, respuesta a la demanda, generación distribuida, etc.)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_31_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_31_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_31_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Parcialmente instalado (apoyando al menos un recurso)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Instalado en su mayoría (apoyando múltiples recursos)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Totalmente instalado (apoyando todos los recursos disponibles)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.2</td>
+                    <td class="tg-6e8n">Ha habilitado soluciones de gestión de energía para los clientes (incluyendo comerciales, industriales y residenciales) con información de consumo y mercado?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_32_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_32_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_32_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Un poco (&lt;10% de todos los clientes)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">En gran medida (10% - 70%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Completamente (&gt;70%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.3</td>
+                    <td class="tg-6e8n">Se están habilitando o implementando recursos adicionales (ej: vehículos eléctricos, almacenamiento, generación distribuida) para ser reemplazados por productos del mercado que proporcionen confiabilidad u otros objetivos?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_33_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_33_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_33_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">Se han identificado recursos pero no se han habilitado</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Se ha habilitado al menos un recurso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Se han habilitado numerosos recursos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Hay un proceso continuo de identificación y habilitación de nuevos recursos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>3.4</td>
+                    <td class="tg-6e8n">Ha desarrollado procesos de supervisión y gestión de seguridad para la proteger la interacción con un amplio portafolio de socios de la cadena de valor?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_34_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_34_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_34_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Los procesos de seguridad están establecidos en su organización</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Los procesos de seguridad colaborativos están establecidos en la organización con al menos uno de los socios de la cadena de valor</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Los procesos de seguridad colaborativos están establecidos a través de toda su cadena de valor.</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-pu0z" colspan="5">Nivel 4- OPTIMIZACIÓN</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.1</td>
+                    <td class="tg-6e8n">Son sus fuentes de energía (incluyendo recursos como Volt/Var, respuesta a la demanda, generación distribuida) gestionables e intercambiables?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_41_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_41_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_41_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Para un recurso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Para dos o más recursos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Para todos los recursos disponibles</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.2</td>
+                    <td class="tg-6e8n">Ha implementado modelos de optimización del portafolio de servicios que abarque los recursos disponibles y los mercados en tiempo-real (ej: para habilitar la respuesta a condiciones de mercados/suministro dinámicos)</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_42_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_42_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_42_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">Para un recurso</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">Para dos o más recursos</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Para todos los recursos disponibles</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.3</td>
+                    <td class="tg-6e8n">Para qué porcentaje de los usuarios residenciales les ofrece comunicación bidireccional segura vía HAN?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_43_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_43_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_43_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">E</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">F</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>4.4</td>
+                    <td class="tg-6e8n">Para qué porcentaje de los clientes residenciales tiene visibilidad y control de los electrodomésticos de gran consumo (ej: aire acondicionado, calentador de agua)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_44_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_44_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_44_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">E</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">F</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-266k" colspan="5"><span style="font-weight:bold">Nivel 5 - LÍDER</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.1</td>
+                    <td class="tg-6e8n">Ha automatizado la optimización de activos de energía a través de toda la cadena de valor?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_51_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_51_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_51_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4"> Algo (&lt;50% de activos de energía)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Substancialmente (50% - 80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">E</td>
+                    <td class="tg-0pky" colspan="4">Extensamente (&gt;80%)</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-6e8n" rowspan="2"><br>5.2</td>
+                    <td class="tg-6e8n">Sus recursos realizan un adecuado despacho y control de forma que se pueda tomar ventaja de las opciones del mercado granular (precio marginal localizable)?</td>
+                    <td class="tg-6e8n">Actual</td>
+                    <td class="tg-6e8n">{{questionary.plan1}}</td>
+                    <td class="tg-6e8n">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-llyw">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_52_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_52_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_52_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">A</td>
+                    <td class="tg-0pky" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">B</td>
+                    <td class="tg-0pky" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">C</td>
+                    <td class="tg-0pky" colspan="4">1% - 25%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">D</td>
+                    <td class="tg-0pky" colspan="4">26% - 50%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">E</td>
+                    <td class="tg-0lax" colspan="4">51% - 75%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">F</td>
+                    <td class="tg-0pky" colspan="4">76% - 100%</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-abx8" rowspan="2"><br>5.3</td>
+                    <td class="tg-abx8">Sus esquemas de control automatizado y de optimización  de recursos consideran y respaldan la optimización  de la red regional y/o nacional?</td>
+                    <td class="tg-abx8">Actual</td>
+                    <td class="tg-abx8">{{questionary.plan1}}</td>
+                    <td class="tg-abx8">{{questionary.plan2}}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-y6fn">Seleccione a la derecha la opción que mejor se adapta su situación actual, horizonte de planeación uno y horizonte de planeación dos.</td>
+                    <td class="tg-llyw">{{ form.vci_53_act }}</td>
+                    <td class="tg-llyw">{{ form.vci_53_p1 }}</td>
+                    <td class="tg-llyw">{{ form.vci_53_p2 }}</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">A</td>
+                    <td class="tg-0lax" colspan="4">No</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">B</td>
+                    <td class="tg-0lax" colspan="4">En desarrollo</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">C</td>
+                    <td class="tg-0lax" colspan="4">En una medida limitada</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">D</td>
+                    <td class="tg-0lax" colspan="4">Sí, de forma significativa</td>
+                  </tr>
+                </table>
+
+              <!-- FIN DE TABLA DE CUESTIONARIO  -->
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary btn-block" value="Siguiente Sección" />
+            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

@@ -1,0 +1,447 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/result-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Resultados</h1>
+<span class="subheading">{{questionary.name}}</span>
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+       
+       <h2 class="section-heading mb-4">Detalle del puntaje obtenido</h2>
+        <div>
+          <!--INICIO TABLA DE DATOS-->    
+          <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+            .tg .tg-zlqz{font-weight:bold;background-color:#c0c0c0;border-color:inherit;text-align:center;vertical-align:top}
+            .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+            .tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+            .tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
+            .tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+            .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+            </style>
+            <table id="target" class="tg" WIDTH="100%">
+              <tr>
+                <th class="tg-llyw"></th>
+                <th class="tg-zlqz">Est. Actual</th>
+                <th class="tg-zlqz">{{questionary.plan1}}</th>
+                <th class="tg-zlqz">{{questionary.plan2}}</th>
+                <th class="tg-zlqz">Mínimo</th>
+              </tr>
+              <tr>
+                <td class="tg-fymr">INDICE GENERAL DE MADUREZ</td>
+                <td class="tg-7btt">{{P_dataAct.8}}</td>
+                <td class="tg-7btt">{{P_dataP1.8}}</td>
+                <td class="tg-7btt">{{P_dataP2.8}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 1 - Strategy, Management and Regulatory (SMR)</td>
+                <td class="tg-7btt">{{P_dataAct.0}}</td>
+                <td class="tg-7btt">{{P_dataP1.0}}</td>
+                <td class="tg-7btt">{{P_dataP2.0}}</td>
+                <td class="tg-7btt">0.67</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.0}}</td>
+                <td class="tg-c3ow">{{dataP1.0}}</td>
+                <td class="tg-c3ow">{{dataP2.0}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.1}}</td>
+                <td class="tg-c3ow">{{dataP1.1}}</td>
+                <td class="tg-c3ow">{{dataP2.1}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.2}}</td>
+                <td class="tg-c3ow">{{dataP1.2}}</td>
+                <td class="tg-c3ow">{{dataP2.2}}</td>
+                <td class="tg-c3ow">0.65</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.3}}</td>
+                <td class="tg-c3ow">{{dataP1.3}}</td>
+                <td class="tg-c3ow">{{dataP2.3}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.4}}</td>
+                <td class="tg-c3ow">{{dataP1.4}}</td>
+                <td class="tg-c3ow">{{dataP2.4}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 2 - Organization and Stucture (OS)</td>
+                <td class="tg-7btt">{{P_dataAct.1}}</td>
+                <td class="tg-7btt">{{P_dataP1.1}}</td>
+                <td class="tg-7btt">{{P_dataP2.1}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.5}}</td>
+                <td class="tg-c3ow">{{dataP1.5}}</td>
+                <td class="tg-c3ow">{{dataP2.5}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.6}}</td>
+                <td class="tg-c3ow">{{dataP1.6}}</td>
+                <td class="tg-c3ow">{{dataP2.6}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.7}}</td>
+                <td class="tg-c3ow">{{dataP1.7}}</td>
+                <td class="tg-c3ow">{{dataP2.7}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.8}}</td>
+                <td class="tg-c3ow">{{dataP1.8}}</td>
+                <td class="tg-c3ow">{{dataP2.8}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.9}}</td>
+                <td class="tg-c3ow">{{dataP1.9}}</td>
+                <td class="tg-c3ow">{{dataP2.9}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 3 - Grid Operations (GO)</td>
+                <td class="tg-7btt">{{P_dataAct.2}}</td>
+                <td class="tg-7btt">{{P_dataP1.2}}</td>
+                <td class="tg-7btt">{{P_dataP2.2}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.10}}</td>
+                <td class="tg-c3ow">{{dataP1.10}}</td>
+                <td class="tg-c3ow">{{dataP2.10}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.11}}</td>
+                <td class="tg-c3ow">{{dataP1.11}}</td>
+                <td class="tg-c3ow">{{dataP2.11}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.12}}</td>
+                <td class="tg-c3ow">{{dataP1.12}}</td>
+                <td class="tg-c3ow">{{dataP2.12}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.13}}</td>
+                <td class="tg-c3ow">{{dataP1.13}}</td>
+                <td class="tg-c3ow">{{dataP2.13}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.14}}</td>
+                <td class="tg-c3ow">{{dataP1.14}}</td>
+                <td class="tg-c3ow">{{dataP2.14}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 4 - Work and Management (WAM)</td>
+                <td class="tg-7btt">{{P_dataAct.3}}</td>
+                <td class="tg-7btt">{{P_dataP1.3}}</td>
+                <td class="tg-7btt">{{P_dataP2.3}}</td>
+                <td class="tg-7btt">0.68</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.15}}</td>
+                <td class="tg-c3ow">{{dataP1.15}}</td>
+                <td class="tg-c3ow">{{dataP2.15}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.16}}</td>
+                <td class="tg-c3ow">{{dataP1.16}}</td>
+                <td class="tg-c3ow">{{dataP2.16}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.17}}</td>
+                <td class="tg-c3ow">{{dataP1.17}}</td>
+                <td class="tg-c3ow">{{dataP2.17}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.18}}</td>
+                <td class="tg-c3ow">{{dataP1.18}}</td>
+                <td class="tg-c3ow">{{dataP2.18}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.19}}</td>
+                <td class="tg-c3ow">{{dataP1.19}}</td>
+                <td class="tg-c3ow">{{dataP2.19}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 5 - Technology (TECH)<br></td>
+                <td class="tg-7btt">{{P_dataAct.4}}</td>
+                <td class="tg-7btt">{{P_dataP1.4}}</td>
+                <td class="tg-7btt">{{P_dataP2.4}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.20}}</td>
+                <td class="tg-c3ow">{{dataP1.20}}</td>
+                <td class="tg-c3ow">{{dataP2.20}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.21}}</td>
+                <td class="tg-c3ow">{{dataP1.21}}</td>
+                <td class="tg-c3ow">{{dataP2.21}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.22}}</td>
+                <td class="tg-c3ow">{{dataP1.22}}</td>
+                <td class="tg-c3ow">{{dataP2.22}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.23}}</td>
+                <td class="tg-c3ow">{{dataP1.23}}</td>
+                <td class="tg-c3ow">{{dataP2.23}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.24}}</td>
+                <td class="tg-c3ow">{{dataP1.24}}</td>
+                <td class="tg-c3ow">{{dataP2.24}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 6 - Custumer (CUST)</td>
+                <td class="tg-7btt">{{P_dataAct.5}}</td>
+                <td class="tg-7btt">{{P_dataP1.5}}</td>
+                <td class="tg-7btt">{{P_dataP2.5}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.25}}</td>
+                <td class="tg-c3ow">{{dataP1.25}}</td>
+                <td class="tg-c3ow">{{dataP2.25}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.26}}</td>
+                <td class="tg-c3ow">{{dataP1.26}}</td>
+                <td class="tg-c3ow">{{dataP2.26}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.27}}</td>
+                <td class="tg-c3ow">{{dataP1.27}}</td>
+                <td class="tg-c3ow">{{dataP2.27}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.28}}</td>
+                <td class="tg-c3ow">{{dataP1.28}}</td>
+                <td class="tg-c3ow">{{dataP2.28}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.29}}</td>
+                <td class="tg-c3ow">{{dataP1.29}}</td>
+                <td class="tg-c3ow">{{dataP2.29}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 7 - Value Chain Integration (VCI)<br></td>
+                <td class="tg-7btt">{{P_dataAct.6}}</td>
+                <td class="tg-7btt">{{P_dataP1.6}}</td>
+                <td class="tg-7btt">{{P_dataP2.6}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.30}}</td>
+                <td class="tg-c3ow">{{dataP1.30}}</td>
+                <td class="tg-c3ow">{{dataP2.30}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.31}}</td>
+                <td class="tg-c3ow">{{dataP1.31}}</td>
+                <td class="tg-c3ow">{{dataP2.31}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.32}}</td>
+                <td class="tg-c3ow">{{dataP1.32}}</td>
+                <td class="tg-c3ow">{{dataP2.32}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.33}}</td>
+                <td class="tg-c3ow">{{dataP1.33}}</td>
+                <td class="tg-c3ow">{{dataP2.33}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.34}}</td>
+                <td class="tg-c3ow">{{dataP1.34}}</td>
+                <td class="tg-c3ow">{{dataP2.34}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+              <tr>
+                <td class="tg-llyw" colspan="5"></td>
+              </tr>
+              <tr>
+                <td class="tg-fymr">Sección 8 - Societal and Environmental (SE)</td>
+                <td class="tg-7btt">{{P_dataAct.7}}</td>
+                <td class="tg-7btt">{{P_dataP1.7}}</td>
+                <td class="tg-7btt">{{P_dataP2.7}}</td>
+                <td class="tg-7btt">0.66</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Inicial</td>
+                <td class="tg-c3ow">{{dataAct.35}}</td>
+                <td class="tg-c3ow">{{dataP1.35}}</td>
+                <td class="tg-c3ow">{{dataP2.35}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Habilitado</td>
+                <td class="tg-c3ow">{{dataAct.36}}</td>
+                <td class="tg-c3ow">{{dataP1.36}}</td>
+                <td class="tg-c3ow">{{dataP2.36}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Integración</td>
+                <td class="tg-c3ow">{{dataAct.37}}</td>
+                <td class="tg-c3ow">{{dataP1.37}}</td>
+                <td class="tg-c3ow">{{dataP2.37}}</td>
+                <td class="tg-c3ow">0.6</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Optimización</td>
+                <td class="tg-c3ow">{{dataAct.38}}</td>
+                <td class="tg-c3ow">{{dataP1.38}}</td>
+                <td class="tg-c3ow">{{dataP2.38}}</td>
+                <td class="tg-c3ow">0.7</td>
+              </tr>
+              <tr>
+                <td class="tg-0pky">Líder</td>
+                <td class="tg-c3ow">{{dataAct.39}}</td>
+                <td class="tg-c3ow">{{dataP1.39}}</td>
+                <td class="tg-c3ow">{{dataP2.39}}</td>
+                <td class="tg-c3ow">0.8</td>
+              </tr>
+            </table>
+            <!--FIN TABLA DE DATOS-->
+
+
+            <script type="text/javascript">
+              function cargar() {
+                var celdas = document.getElementById("target").getElementsByTagName("td");
+                var indices = [1,2,3,7,8,9,12,13,14,17,18,19,22,23,24,27,28,29,32,33,34,
+                38,39,40,43,44,45,48,49,50,53,54,55,58,59,60,63,64,65,
+                69,70,71,74,75,76,79,80,81,84,85,86,89,90,91,94,95,96,
+                100,101,102,105,106,107,110,111,112,115,116,117,120,121,122,125,126,127,
+                131,132,133,136,137,138,141,142,143,146,147,148,151,152,153,156,157,158,
+                162,163,164,167,168,169,172,173,174,177,178,179,182,183,184,187,188,189,
+                193,194,195,198,199,200,203,204,205,208,209,210,213,214,215,218,219,220,
+                224,225,226,229,230,231,234,235,236,239,240,241,244,245,246,249,250,251
+                ];
+                var minimo= [0.66,0.66,0.66,0.67,0.67,0.67,0.6,0.6,0.6,0.6,0.6,0.6,0.65,0.65,0.65,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.66,0.66,0.66,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.66,0.66,0.66,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.68,0.68,0.68,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.66,0.66,0.66,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.66,0.66,0.66,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.66,0.66,0.66,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.8,0.8,0.8,
+                0.66,0.66,0.66,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.7,0.7,0.7,0.8,0.8,0.8,
+                ];
+                for(var i=0; i<indices.length; i++) {
+                  if(celdas.item(indices[i]).textContent >=minimo[i]) {
+                    celdas.item(indices[i]).style.color = "#009900";
+                  }
+                }
+              }
+              
+              window.onload = cargar;
+              </script>
+              <a href="{% url 'questionaries:chartresults' questionary.id questionary.name|slugify %}" class="btn btn-primary btn-block" >Graficar</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}

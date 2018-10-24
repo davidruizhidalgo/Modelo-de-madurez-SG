@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block title %}Acerca de{% endblock %}
+
+{%load static%}
+{%block background %}{% static 'core/img/contact-PSI.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Acerca de</h1>
+<span class="subheading">Universidad del Valle</span>
+<span class="subheading">Grupo de Percepción y Sistemas Inteligentes - PSI</span>
+{%endblock%}
+
+{% block content %}
+    <div class="container">
+      <div class="row">   
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+          <img class="img-fluid avatar" src="{% static 'core/img/avatarPSI.jpg'%}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+          <h2 class="section-heading"><a class="section-heading" href="http://psi.univalle.edu.co/">PSI - Univalle</a></h2>   
+          <p style="text-align: justify;">El grupo de Percepción y Sistemas Inteligentes - PSI es un grupo de investigación de la Universidad del Valle creado en 2000, y que de acuerdo con la clasificación de grupos realizada por Colciencias, pertenece a la categoría A1.</p>
+          <p style="text-align: justify;">Nuestros intereses involucran la inteligencia computacional, la robótica móvil, la visión artificial, el procesamiento digital de señales, la instrumentación y las comunicaciones industriales. En estos campos el grupo ha realizado una amplia gama de desarrollos, algunos de ellos en asocio con empresas del sector y/o otras Universidades nacionales e internacionales.</p>
+        </div>
+      </div>  
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-8 mx-auto">
+            <p style="text-align: justify;">En caso de inquietudes, comentarios o solicitud de asesoría por favor ponerse en contacto por cualquiera de los siguentes medios:</p>
+            <br>
+            <p><b>Percepción y Sistemas Inteligentes - PSI:</b></p>
+            <p>Teléfono:+57 2 3212100 ext. 8411 y 8412 </p>
+            <p>email: eduardo.caicedo@correounivalle.edu.co </p>
+            <p>Ciudad Universitaria - Meléndez </p>
+            <p>Universidad del Valle </p>
+            <p>Cali, Colombia </p>
+            
+          </div>
+        </div>
+      </div>
+      <hr>
+{% endblock%}

@@ -1,0 +1,393 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{questionary.name}}{% endblock %}
+{%block background %}{% static 'core/img/chart-bg.jpg' %}{%endblock%}
+{%block headers %}
+<h1>Gráficas </h1>
+<span class="subheading">{{questionary.name}}</span>
+<meta charset="utf-8">
+{%endblock%}
+
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+       
+        <h3>Índice General de Madurez</h3>
+            <div id="container_M1"></div>
+            <br>
+            <div id="container_M2"></div>
+            <br>
+       <h3>Sección 1 - Strategy, Management and Regulatory (SMR)</h3>
+            <div id="container_smr"></div>
+            <br>
+        <h3>Sección 2 - Organization and Stucture (OS)</h3>
+            <div id="container_os"></div>
+            <br>
+        <h3>Sección 3 - Grid Operations (GO)</h3>
+            <div id="container_go"></div>
+            <br>
+        <h3>Sección 4 - Work and Management (WAM)</h3>
+            <div id="container_wam"></div>
+            <br>
+        <h3>Sección 5 - Technology (TECH)</h3>
+            <div id="container_tech"></div>
+            <br>
+        <h3>Sección 6 - Custumer (CUST)</h3>
+            <div id="container_cust"></div>
+            <br>
+        <h3>Sección 7 - Value Chain Integration (VCI)</h3>
+            <div id="container_vci"></div>
+            <br>
+        <h3>Sección 8 - Societal and Environmental (SE)</h3>
+            <div id="container_se"></div>
+
+            <script src="https://code.highcharts.com/highcharts.src.js"></script>
+            <script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+            <script>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_M1', {
+
+    chart: {
+        polar: true,
+        type: 'line'
+    },
+
+    title: {
+        text: ''
+    },
+
+    pane: {
+        size: '80%'
+    },
+
+    xAxis: {
+        categories: ['SMR', 'OS', 'GO', 'WAM', 'TECH', 'CUST', 'VCI', 'SE'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.1f}</b><br/>'
+    },
+
+    legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        y: 70,
+        layout: 'vertical'
+    },
+
+    series: [{
+        name: 'Actual',
+        data: [{{P_dataAct.0}}, {{P_dataAct.1}}, {{P_dataAct.2}}, {{P_dataAct.3}}, {{P_dataAct.4}},{{P_dataAct.5}}, {{P_dataAct.6}}, {{P_dataAct.7}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{P_dataP1.0}}, {{P_dataP1.1}}, {{P_dataP1.2}}, {{P_dataP1.3}}, {{P_dataP1.4}},{{P_dataP1.5}}, {{P_dataP1.6}}, {{P_dataP1.7}}]
+    },{
+        name: '{{questionary.plan2}}',
+        data: [{{P_dataP2.0}}, {{P_dataP2.1}}, {{P_dataP2.2}}, {{P_dataP2.3}}, {{P_dataP2.4}},{{P_dataP2.5}}, {{P_dataP2.6}}, {{P_dataP2.7}}]
+    }]
+
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_M2', {
+    colors: ['#90ED7D','#434348','#7CB6EC'],
+    chart: {
+        type: 'area'
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['SMR', 'OS', 'GO', 'WAM', 'TECH', 'CUST', 'VCI', 'SE']
+    },
+    yAxis: {
+        title: {
+            text: ''
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    series: [{
+        name: '{{questionary.plan2}}',
+        data: [{{P_dataP1.0}}, {{P_dataP1.1}}, {{P_dataP1.2}}, {{P_dataP1.3}}, {{P_dataP1.4}},{{P_dataP1.5}}, {{P_dataP1.6}}, {{P_dataP1.7}}]
+    },{
+        name: '{{questionary.plan1}}',
+        data: [{{P_dataP2.0}}, {{P_dataP2.1}}, {{P_dataP2.2}}, {{P_dataP2.3}}, {{P_dataP2.4}},{{P_dataP2.5}}, {{P_dataP2.6}}, {{P_dataP2.7}}]
+    },{
+        name: 'Actual',
+        data: [{{P_dataAct.0}}, {{P_dataAct.1}}, {{P_dataAct.2}}, {{P_dataAct.3}}, {{P_dataAct.4}},{{P_dataAct.5}}, {{P_dataAct.6}}, {{P_dataAct.7}}]
+    }]
+});
+////////////////////////////////////////////////////////////////////////////////////////////////////
+              Highcharts.chart('container_smr', {
+                colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+                  chart: {
+                      type: 'column'
+                  },
+                  title: {
+                      text: ''
+                  },
+                  xAxis: {
+                      categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+                  },
+                  yAxis: {
+                    title: {
+                        text: ''
+                    }
+            
+                },
+                  plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: false,
+                            format: '{point.y:.1f}'
+                        }
+                    }
+                },            
+                  
+                  series: [{
+                      name: 'Actual',
+                      data: [{{dataAct.0}}, {{dataAct.1}}, {{dataAct.2}}, {{dataAct.3}}, {{dataAct.4}}]
+                  }, {
+                      name: '{{questionary.plan1}}',
+                      data: [{{dataP1.0}}, {{dataP1.1}}, {{dataP1.2}}, {{dataP1.3}}, {{dataP1.4}}]
+                  }, {
+                      name: '{{questionary.plan2}}',
+                      data: [{{dataP2.0}}, {{dataP2.1}}, {{dataP2.2}}, {{dataP2.3}}, {{dataP2.4}}]
+                }, {
+                  name: 'Mínimo',
+                  data: [0.6,0.6,0.65,0.7,0.8]                  
+                }]
+              });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+            Highcharts.chart('container_os', {
+                colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+                chart: {
+                    type: 'column'
+                },
+                title: { text: '' },
+                xAxis: {
+                    categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+                },
+                yAxis: {title: {text: ''}},
+                plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+      
+                series: [{
+                    name: 'Actual',
+                    data: [{{dataAct.5}}, {{dataAct.6}}, {{dataAct.7}}, {{dataAct.8}}, {{dataAct.9}}]
+                }, {
+                    name: '{{questionary.plan1}}',
+                    data: [{{dataP1.5}}, {{dataP1.6}}, {{dataP1.7}}, {{dataP1.8}}, {{dataP1.9}}]
+                 }, {
+                     name: '{{questionary.plan2}}',
+                     data: [{{dataP2.5}}, {{dataP2.6}}, {{dataP2.7}}, {{dataP2.8}}, {{dataP2.9}}]
+                }, {
+                      name: 'Mínimo',
+                    data: [0.6,0.6,0.6,0.7,0.8]                  
+                }]
+                });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_go', {
+    colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+    chart: {
+        type: 'column'
+    },
+    title: { text: '' },
+    xAxis: {
+        categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+    },
+    yAxis: {title: {text: ''}},
+    plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+
+    series: [{
+        name: 'Actual',
+        data: [{{dataAct.10}}, {{dataAct.11}}, {{dataAct.12}}, {{dataAct.13}}, {{dataAct.14}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{dataP1.10}}, {{dataP1.11}}, {{dataP1.12}}, {{dataP1.13}}, {{dataP1.14}}]
+     }, {
+         name: '{{questionary.plan2}}',
+         data: [{{dataP2.10}}, {{dataP2.11}}, {{dataP2.12}}, {{dataP2.13}}, {{dataP2.14}}]
+    }, {
+          name: 'Mínimo',
+        data: [0.6,0.6,0.6,0.7,0.8]                  
+    }]
+    });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_wam', {
+    colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+    chart: {
+        type: 'column'
+    },
+    title: { text: '' },
+    xAxis: {
+        categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+    },
+    yAxis: {title: {text: ''}},
+    plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+
+    series: [{
+        name: 'Actual',
+        data: [{{dataAct.15}}, {{dataAct.16}}, {{dataAct.17}}, {{dataAct.18}}, {{dataAct.19}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{dataP1.15}}, {{dataP1.16}}, {{dataP1.17}}, {{dataP1.18}}, {{dataP1.19}}]
+     }, {
+         name: '{{questionary.plan2}}',
+         data: [{{dataP2.15}}, {{dataP2.16}}, {{dataP2.17}}, {{dataP2.18}}, {{dataP2.19}}]
+    }, {
+          name: 'Mínimo',
+        data: [0.6,0.6,0.7,0.7,0.8]                  
+    }]
+    });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_tech', {
+    colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+    chart: {
+        type: 'column'
+    },
+    title: { text: '' },
+    xAxis: {
+        categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+    },
+    yAxis: {title: {text: ''}},
+    plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+
+    series: [{
+        name: 'Actual',
+        data: [{{dataAct.20}}, {{dataAct.21}}, {{dataAct.22}}, {{dataAct.23}}, {{dataAct.24}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{dataP1.20}}, {{dataP1.21}}, {{dataP1.22}}, {{dataP1.23}}, {{dataP1.24}}]
+     }, {
+         name: '{{questionary.plan2}}',
+         data: [{{dataP2.20}}, {{dataP2.21}}, {{dataP2.22}}, {{dataP2.23}}, {{dataP2.24}}]
+    }, {
+          name: 'Mínimo',
+        data: [0.6,0.6,0.6,0.7,0.8]                  
+    }]
+    });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_cust', {
+    colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+    chart: {
+        type: 'column'
+    },
+    title: { text: '' },
+    xAxis: {
+        categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+    },
+    yAxis: {title: {text: ''}},
+    plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+
+    series: [{
+        name: 'Actual',
+        data: [{{dataAct.25}}, {{dataAct.26}}, {{dataAct.27}}, {{dataAct.28}}, {{dataAct.29}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{dataP1.25}}, {{dataP1.26}}, {{dataP1.27}}, {{dataP1.28}}, {{dataP1.29}}]
+     }, {
+         name: '{{questionary.plan2}}',
+         data: [{{dataP2.25}}, {{dataP2.26}}, {{dataP2.27}}, {{dataP2.28}}, {{dataP2.29}}]
+    }, {
+          name: 'Mínimo',
+        data: [0.6,0.6,0.6,0.7,0.8]                  
+    }]
+    });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_vci', {
+    colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+    chart: {
+        type: 'column'
+    },
+    title: { text: '' },
+    xAxis: {
+        categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+    },
+    yAxis: {title: {text: ''}},
+    plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+
+    series: [{
+        name: 'Actual',
+        data: [{{dataAct.30}}, {{dataAct.31}}, {{dataAct.32}}, {{dataAct.33}}, {{dataAct.34}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{dataP1.30}}, {{dataP1.31}}, {{dataP1.32}}, {{dataP1.33}}, {{dataP1.34}}]
+     }, {
+         name: '{{questionary.plan2}}',
+         data: [{{dataP2.30}}, {{dataP2.31}}, {{dataP2.32}}, {{dataP2.33}}, {{dataP2.34}}]
+    }, {
+          name: 'Mínimo',
+        data: [0.6,0.6,0.6,0.7,0.8]                  
+    }]
+    });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Highcharts.chart('container_se', {
+    colors: ['#7CB6EC','#434348','#90ED7D','#FF5C5C'],
+    chart: {
+        type: 'column'
+    },
+    title: { text: '' },
+    xAxis: {
+        categories: ['Inicial', 'Habilitado', 'Integración', 'Optimización', 'Líder']
+    },
+    yAxis: {title: {text: ''}},
+    plotOptions: { series: {borderWidth: 0, dataLabels: {enabled: false, format: '{point.y:.1f}'}}},            
+
+    series: [{
+        name: 'Actual',
+        data: [{{dataAct.35}}, {{dataAct.36}}, {{dataAct.37}}, {{dataAct.38}}, {{dataAct.39}}]
+    }, {
+        name: '{{questionary.plan1}}',
+        data: [{{dataP1.35}}, {{dataP1.36}}, {{dataP1.37}}, {{dataP1.38}}, {{dataP1.39}}]
+     }, {
+         name: '{{questionary.plan2}}',
+         data: [{{dataP2.35}}, {{dataP2.36}}, {{dataP2.37}}, {{dataP2.38}}, {{dataP2.39}}]
+    }, {
+          name: 'Mínimo',
+        data: [0.6,0.6,0.6,0.7,0.8]                  
+    }]
+    });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            </script>
+
+      </div>
+    </div>
+  </div>
+</main>
+<hr>
+{% endblock %}
