@@ -63,7 +63,7 @@ class ResultsDetailView(DetailView):
         if self.object.srm_12_act == 'E': 
             table_data.append(0.35*1.0)
         elif self.object.srm_12_act == 'D': 
-            table_data.append(0.35*7.0)
+            table_data.append(0.35*0.7)
         elif self.object.srm_12_act == 'C':
             table_data.append(0.35*0.55)
         elif self.object.srm_12_act == 'B':
@@ -85,7 +85,7 @@ class ResultsDetailView(DetailView):
         if self.object.srm_12_p2 == 'E': 
             table_data.append(0.35*1.0)
         elif self.object.srm_12_p2 == 'D': 
-            table_data.append(0.35*7.0)
+            table_data.append(0.35*0.7)
         elif self.object.srm_12_p2 == 'C':
             table_data.append(0.35*0.55)
         elif self.object.srm_12_p2 == 'B':
@@ -97,21 +97,21 @@ class ResultsDetailView(DetailView):
         if self.object.srm_13_act == 'C': 
             table_data.append(0.25*1.0)
         elif self.object.srm_13_act == 'B': 
-            table_data.append(0.25*7.0)
+            table_data.append(0.25*0.7)
         else: # A o nulo
             table_data.append(0.0)
 
         if self.object.srm_13_p1 == 'C': 
             table_data.append(0.25*1.0)
         elif self.object.srm_13_p1 == 'B': 
-            table_data.append(0.25*7.0)
+            table_data.append(0.25*0.7)
         else: # A o nulo
             table_data.append(0.0)
 
         if self.object.srm_13_p2 == 'C': 
             table_data.append(0.25*1.0)
         elif self.object.srm_13_p2 == 'B': 
-            table_data.append(0.25*7.0)
+            table_data.append(0.25*0.7)
         else: # A o nulo
             table_data.append(0.0)
 
@@ -5708,7 +5708,7 @@ class ChartsDetailView(DetailView):
         if self.object.srm_12_act == 'E': 
             table_data.append(0.35*1.0)
         elif self.object.srm_12_act == 'D': 
-            table_data.append(0.35*7.0)
+            table_data.append(0.35*0.7)
         elif self.object.srm_12_act == 'C':
             table_data.append(0.35*0.55)
         elif self.object.srm_12_act == 'B':
@@ -5730,7 +5730,7 @@ class ChartsDetailView(DetailView):
         if self.object.srm_12_p2 == 'E': 
             table_data.append(0.35*1.0)
         elif self.object.srm_12_p2 == 'D': 
-            table_data.append(0.35*7.0)
+            table_data.append(0.35*0.7)
         elif self.object.srm_12_p2 == 'C':
             table_data.append(0.35*0.55)
         elif self.object.srm_12_p2 == 'B':
@@ -5742,21 +5742,21 @@ class ChartsDetailView(DetailView):
         if self.object.srm_13_act == 'C': 
             table_data.append(0.25*1.0)
         elif self.object.srm_13_act == 'B': 
-            table_data.append(0.25*7.0)
+            table_data.append(0.25*0.7)
         else: # A o nulo
             table_data.append(0.0)
 
         if self.object.srm_13_p1 == 'C': 
             table_data.append(0.25*1.0)
         elif self.object.srm_13_p1 == 'B': 
-            table_data.append(0.25*7.0)
+            table_data.append(0.25*0.7)
         else: # A o nulo
             table_data.append(0.0)
 
         if self.object.srm_13_p2 == 'C': 
             table_data.append(0.25*1.0)
         elif self.object.srm_13_p2 == 'B': 
-            table_data.append(0.25*7.0)
+            table_data.append(0.25*0.7)
         else: # A o nulo
             table_data.append(0.0)
 
